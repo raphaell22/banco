@@ -1,27 +1,37 @@
 // Main.js
-
 import { Info } from "./Info";
+import { Link } from "react-router-dom";
 import { ImageCarousel } from "./ImageCarousel";
-import masInfo from "./assets/img/masinfo.png";
+import { Navbar } from "./Navbar";
+import { Footer } from "./Footer";
+import imgMasInfo from "./assets/img/masinfo.png";
 import chat from "./assets/img/chateaConNosotros.png";
 
 export function Principal() {
   return (
-    <div className="container-fluid mt-2">
-      <ImageCarousel />
-      <br />
-      <br />
-      <Info />
-      <br />
-      <div className="container row mt-4 mb-3">
-        <div className="col">
-          <img className="img-fluid" src={masInfo} />
+    <div>
+      <Navbar />
+      <div className="container-fluid mt-2">
+        <ImageCarousel />
+        <br />
+        <br />
+        <Info />
+        <br />
+        <div className="container-fluid row mt-4 mb-3">
+          <div className="col">
+            <Link to="/MasInfo">
+              <img className="img-fluid" src={imgMasInfo} />
+            </Link>
+          </div>
+          <div className="col text-end">
+            <img className="img-fluid" src={chat} />
+          </div>
         </div>
-        <div className="col text-end">
-          <img className="img-fluid" src={chat} />
-        </div>
+        <br />
       </div>
-      <br />
+      <Footer />
     </div>
   );
 }
+
+export default Principal;

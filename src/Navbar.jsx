@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "./icons/banco_logo.png";
 import mouse from "./icons/mouse.png";
 import personas from "./icons/personas.png";
@@ -11,29 +12,35 @@ export function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white justify-content-center p-2">
       <div className="navbar-brand m-2">
-        <img src={logo} height={54} alt="Logo" />
+        <Link to="/">
+          <img src={logo} height={54} alt="Logo" />
+        </Link>
       </div>
       <div className="nav-group btn-md rounded bg-primary text-light me-4">
-        <button type="button" className="btn text-light text-center d-flex">
-          Banca por<br></br> Internet
-          <img className="mt-2" src={mouse} width={29} height={32} alt="" />
-        </button>
+        <Link className="text-decoration-none" role="button" to="/Registro">
+          <button type="button" className="btn text-light text-center d-flex">
+            Banca por<br></br> Internet
+            <img className="mt-2" src={mouse} width={29} height={32} alt="" />
+          </button>
+        </Link>
       </div>
       <div className="nav-group btn-md rounded bg-primary text-light me-2">
-        <button
-          type="button"
-          className="border-end btn text-light text-center pe-2 me-2"
-        >
-          <img src={personas} width={28} height={28} alt="" />
-          Personas
-        </button>
-        <button
-          type="button"
-          className="border-end btn text-light text-center pe-2 me-2"
-        >
-          <img src={empresas} width={28} height={28} alt="" />
-          Empresas
-        </button>
+        <Link to="/login">
+          <button
+            type="button"
+            className="border-end btn text-light text-center pe-2 me-2"
+          >
+            <img src={personas} width={28} height={28} alt="" />
+            Personas
+          </button>
+          <button
+            type="button"
+            className="border-end btn text-light text-center pe-2 me-2"
+          >
+            <img src={empresas} width={28} height={28} alt="" />
+            Empresas
+          </button>
+        </Link>
         <button
           type="button"
           className="border-end btn text-light text-center pe-2 me-2"

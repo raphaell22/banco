@@ -8,6 +8,18 @@ body,
   font-family: 'Montserrat Alternates', sans-serif;
 }
 
+.bg-gradient-primary{
+  background: linear-gradient(to top,
+  #085f63 30%,
+  #49BEB7,
+  #8dd7d2,
+  #ffffff);
+}
+
+.bg-gradient-secondary{
+  background:rgba(141, 215, 210, 0.6);
+}
+
 .border-primary {
   border-color: var(--primary-color) !important;
 }
@@ -29,13 +41,22 @@ body,
   background-color: var(--secondary-color);
 }
 
+/*Bordes redondeados personalizados*/
+.rounded-4{
+  border-radius: 4rem!important;
+}
+
+.rounded-8{
+  border-radius: 8rem!important;
+}
+
 /* CAROUSEL */
 .carousel-item{
   border: none;
-  background: linear-gradient(to top, 
-  #085f63 30%, 
-  #49BEB7, 
-  #8dd7d2, 
+  background: linear-gradient(to top,
+  #085f63 30%,
+  #49BEB7,
+  #8dd7d2,
   #ffffff);
 }
 
@@ -47,4 +68,13 @@ body,
   border: 3px solid #fff; /* Aumenta el grosor del borde aquí */
   opacity: 1;
   box-shadow: none;
+}
+
+.registro-bg {
+  position: relative; /* Necesario para el pseudo-elemento */
+  background-image: url('assets/img/registroBank.png'); /* Cambia la ruta si es necesario */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 50px); /* Ajusta respecto a la altura del Navbar y hr (puedes modificar 60px según tu diseño) */
 }
