@@ -16,6 +16,10 @@ body,
   #ffffff);
 }
 
+.bg-new-secondary{
+  background: var(--secondary-color);
+}
+
 .bg-gradient-secondary{
   background:rgba(141, 215, 210, 0.6);
 }
@@ -24,6 +28,12 @@ body,
   border-color: var(--primary-color) !important;
 }
 
+
+.btn-primary:hover,.btn-primary:active {
+  color: #fff;
+  background-color: rgba(6, 83, 87, 0.9);
+  border-color: rgba(6, 83, 87, 0.9);
+}
 /* Personalizar los estilos usando las nuevas variables personalizadas */
 .bg-primary {
   background: var(--primary-color) !important;
@@ -39,6 +49,10 @@ body,
 
 .btn-secondary {
   background-color: var(--secondary-color);
+}
+
+.bg-gradient-b {
+  background: linear-gradient(to bottom, #ffffff, #085f63),
 }
 
 /*Bordes redondeados personalizados*/
@@ -77,4 +91,12 @@ body,
   background-position: center;
   background-repeat: no-repeat;
   min-height: calc(100vh - 50px); /* Ajusta respecto a la altura del Navbar y hr (puedes modificar 60px según tu diseño) */
+}
+
+.nav-separator {
+  width: 1px; /* Ajusta el ancho del separador como desees */
+  height: 80%; /* Ajusta la altura del separador */
+  background-color: rgba(255, 255, 255, 0.5); /* Color del separador */
+  margin-left: 5px; /* Espaciado a la izquierda del separador */
+  margin-right: 5px; /* Espaciado a la derecha del separador */
 }

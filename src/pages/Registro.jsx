@@ -1,4 +1,3 @@
-import React from "react";
 import { Navbar } from "../Navbar";
 import keyIcon from "../icons/key_icon.png";
 import mailIcon from "../icons/mail_icon.png";
@@ -108,7 +107,7 @@ export const Registro = () => {
                 <img className="me-2" src={keyIcon} width={28} height={28} />
                 Contraseña
               </label>
-              <div class="input-group bg-white rounded-8">
+              <div className="input-group bg-white rounded-8">
                 <input
                   type="password"
                   className="form-control text-primary border-0 rounded-8"
@@ -124,7 +123,7 @@ export const Registro = () => {
                 <img className="me-2" src={keyIcon} width={28} height={28} />
                 Confirmar Contraseña
               </label>
-              <div class="input-group bg-white rounded-8">
+              <div className="input-group bg-white rounded-8">
                 <input
                   type="password"
                   className="form-control text-primary border-0 rounded-8"

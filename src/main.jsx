@@ -6,6 +6,12 @@ import NoPage from "./pages/NoPage";
 import MasInfor from "./pages/MasInfo";
 import Registro from "./pages/Registro";
 import SomosBanco from "./pages/SomosBanco";
+import Banco from "./pages/Banco/Banco";
+import Movimientos from "./pages/Banco/Movimientos";
+import Directorio from "./pages/Banco/Directorio";
+import DirectorioCrud from "./pages/Banco/DirectorioCrud";
+import Transferencia from "./pages/Banco/Transferencia";
+import CambioContra from "./pages/Banco/CambioContra";
 import "./style.css";
 
 const root = createRoot(document.getElementById("root"));
@@ -20,6 +26,12 @@ root.render(
       <Route path="*" element={<NoPage />} />
       <Route path="/MasInfo" element={<MasInfor />} />
       <Route path="/SomosBanco" element={<SomosBanco />} />
+      <Route path="/Banco/Inicio" element={<Banco />} />
+      <Route path="/Banco/Movimientos" element={<Movimientos />} />
+      <Route path="/Banco/Directorio" element={<Directorio />} />
+      <Route path="/Banco/Directorio/Crud" element={<DirectorioCrud />} />
+      <Route path="/Banco/Transferencia" element={<Transferencia />} />
+      <Route path="/Banco/CambioContra" element={<CambioContra />} />
     </Routes>
   </BrowserRouter>
 );

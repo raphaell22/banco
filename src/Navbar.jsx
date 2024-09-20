@@ -13,7 +13,7 @@ export function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-light bg-white justify-content-center p-2">
       <div className="navbar-brand m-2">
         <Link to="/">
-          <img src={logo} height={54} alt="Logo" />
+          <img src={logo} className="p-2" height={54} alt="Logo" />
         </Link>
       </div>
       <div className="nav-group btn-md rounded bg-primary text-light me-4">
