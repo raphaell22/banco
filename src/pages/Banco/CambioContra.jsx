@@ -28,6 +28,8 @@ const CambioContra = () => {
                   className="form-control bg-transparent border-primary border-0 border-bottom border-3"
                 />
               </div>
+              
+              
               <label className="fw-bold" htmlFor="nueva">
                 Nueva Contraseña
               </label>

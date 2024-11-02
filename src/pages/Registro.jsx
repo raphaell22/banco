@@ -6,6 +6,7 @@ import iconCedula from "../icons/iconCedula.png";
 import iconPhone from "../icons/iconPhone.png";
 import iconEyeForm from "../icons/iconEyeForm.png";
 import iconEnter from "../icons/iconEnter.png";
+import personas from "../icons/personaFill.png";
 
 import peopleRegistro from "../assets/img/peopleRegistro.png";
 
@@ -25,6 +26,34 @@ export const Registro = () => {
             </h2>
           </div>
           <div className="card-body">
+          <div className="mb-3">
+              <label
+                htmlFor="name"
+                className="form-label fw-bold text-primary"
+              >
+                <img className="me-2" src={personas} width={28} height={28} />
+                Nombres
+              </label>
+              <input
+                type="name"
+                className="form-control text-primary rounded-pill"
+                id="name"
+              />
+            </div>
+            <div className="mb-3">
+              <label
+                htmlFor="name"
+                className="form-label fw-bold text-primary"
+              >
+                <img className="me-2" src={personas} width={28} height={28} />
+                Apellidos
+              </label>
+              <input
+                type="name"
+                className="form-control text-primary rounded-pill"
+                id="name"
+              />
+            </div>
             <div className="mb-3">
               <label
                 htmlFor="email"
@@ -39,6 +68,7 @@ export const Registro = () => {
                 id="email"
               />
             </div>
+            
 
             <div className="row">
               <div className="col">
