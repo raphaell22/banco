@@ -41,6 +41,20 @@ const CambioContra = () => {
                   className="form-control bg-transparent border-primary border-0 border-bottom border-3"
                 />
               </div>
+
+              <label className="fw-bold" htmlFor="nueva">
+                Confirmar Contraseña
+              </label>
+              <div className="input-group bg-gradient-secondary rounded-3 mb-3">
+                <input
+                  required
+                  id="nueva"
+                  type="password"
+                  className="form-control bg-transparent border-primary border-0 border-bottom border-3"
+                />
+              </div>
+
+
               <div className="text-center container">
                 <button
                   className="btn btn-md p-2 btn-primary rounded-4"
