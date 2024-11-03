@@ -6,7 +6,7 @@ import iconCedula from "../icons/iconCedula.png";
 import iconPhone from "../icons/iconPhone.png";
 import iconEyeForm from "../icons/iconEyeForm.png";
 import iconEnter from "../icons/iconEnter.png";
-import personas from "../icons/personaFill.png";
+import iconopersona2 from "../icons/iconopersona2.png";
 
 import peopleRegistro from "../assets/img/peopleRegistro.png";
 
@@ -31,7 +31,7 @@ export const Registro = () => {
                 htmlFor="name"
                 className="form-label fw-bold text-primary"
               >
-                <img className="me-2" src={personas} width={28} height={28} />
+                <img className="me-2" src={iconopersona2} width={28} height={28} />
                 Nombres
               </label>
               <input
@@ -45,7 +45,7 @@ export const Registro = () => {
                 htmlFor="name"
                 className="form-label fw-bold text-primary"
               >
-                <img className="me-2" src={personas} width={28} height={28} />
+                <img className="me-2" src={iconopersona2} width={28} height={28} />
                 Apellidos
               </label>
               <input
