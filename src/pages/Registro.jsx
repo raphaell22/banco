@@ -71,7 +71,7 @@ export const Registro = () => {
             
 
             <div className="row">
-              <div className="col">
+              <div className="col-lg-6 col-md-6 col-sm-12">
                 <div className="mb-3">
                   <label
                     htmlFor="cedula"
@@ -92,7 +92,7 @@ export const Registro = () => {
                   />
                 </div>
               </div>
-              <div className="col">
+              <div className="col-lg-6 col-md-6 col-sm-12">
                 <div className="mb-3">
                   <label
                     htmlFor="nacimiento"
@@ -126,7 +126,7 @@ export const Registro = () => {
 
               <input
                 type="text"
-                className="form-control text-primary rounded-pill w-50"
+                className="form-control text-primary rounded-pill"
                 id="telefono"
                 placeholder="+"
               />

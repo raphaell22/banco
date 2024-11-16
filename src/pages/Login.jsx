@@ -26,9 +26,9 @@ export const Login = () => {
         <div className="position-absolute top-50 start-50 translate-middle">
           <div
             className="card bg-gradient-secondary"
-            style={{ width: "400px", zIndex: 2 }}
+            style={{ width: "300px", zIndex: 2 }}
           >
-            <div className="card-body mt-4">
+            <div className="card-body">
               <form action="/Banco/Inicio">
                 <div className="mb-3">
                   <label
@@ -88,7 +88,7 @@ export const Login = () => {
                   Ingresar
                 </button>
               </form>
-              <div className="mt-3 d-flex p-1">
+              <div className="mt-3 d-lg-flex text-center p-1">
                 <small className="me-1">¿Primera vez que Ingresas?</small>
                 <a href="/Registro" className="fw-bold text-primary">
                   Registrate Aquí

@@ -6,13 +6,13 @@ import imgGraduate from "./assets/img/becas.png";
 export function SlideItem(props) {
   return (
     <div className="container row align-items-center mb-4">
-      <div className="offset-2 col d-flex justify-content-center">
+      <div className="offset-lg-2 col-lg col-sm-12 d-flex justify-content-center">
         <div>
           <h2 className="fw-bold text-primary">{props.title}</h2>
           <p className="text-white">{props.text}</p>
         </div>
       </div>
-      <div className="col">
+      <div className="col-lg col-sm-12">
         <img
           className="d-block w-100 p-5"
           src={props.src}
