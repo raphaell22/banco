@@ -1,4 +1,5 @@
-import React from "react";
+import {useState} from "react";
+import { useNavigate } from "react-router-dom";
 import { Navbar } from "../Navbar";
 import keyIcon from "../icons/key_icon.png";
 import mailIcon from "../icons/mail_icon.png";
@@ -7,6 +8,37 @@ import iconPerson from "../icons/personaFill.png";
 import iconEyeForm from "../icons/iconEyeForm.png";
 
 export const Login = () => {
+
+  const [email, setEmail] = useState(''); 
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setMessage(''); // Limpiar cualquier mensaje previo
+
+    try {
+        const response = await fetch('http://localhost:3000/v1/public/client/user/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            setMessage('¡Autenticado exitosamente!');
+            navigate('/Banco/Inicio');
+        } else {
+            setMessage('Error de autenticación: ' + data.message);
+        }
+    } catch (error) {
+        setMessage('Error al conectar con la API: ' + error.message);
+    }
+};
+
   return (
     <div>
       <Navbar />
@@ -29,7 +61,7 @@ export const Login = () => {
             style={{ width: "300px", zIndex: 2 }}
           >
             <div className="card-body">
-              <form action="/Banco/Inicio">
+              <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label
                     htmlFor="email"
@@ -46,6 +78,8 @@ export const Login = () => {
                   <input
                     type="email"
                     required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="form-control rounded-pill"
                     id="email"
                   />
@@ -63,10 +97,12 @@ export const Login = () => {
                     />
                     Contraseña
                   </label>
-                  <div class="input-group bg-white rounded-8">
+                  <div className="input-group bg-white rounded-8">
                     <input
                       id="pasw"
+                      onChange={(e) => setPassword(e.target.value)}
                       required
+                      value={password}
                       type="password"
                       className="form-control text-primary border-0 rounded-8"
                     />
@@ -88,6 +124,7 @@ export const Login = () => {
                   Ingresar
                 </button>
               </form>
+              {message && <p>{message}</p>}
               <div className="mt-3 d-lg-flex text-center p-1">
                 <small className="me-1">¿Primera vez que Ingresas?</small>
                 <a href="/Registro" className="fw-bold text-primary">
