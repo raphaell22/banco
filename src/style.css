@@ -16,6 +16,14 @@ body,
   #ffffff);
 }
 
+.bg-gradient-primary-rev{
+  background: linear-gradient(to top,
+  #085f63 5%,
+  #49BEB7,
+  #8dd7d2,
+  #ffffff);
+}
+
 .bg-new-secondary{
   background: var(--secondary-color);
 }

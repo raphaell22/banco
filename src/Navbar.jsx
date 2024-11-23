@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import logo from "./icons/banco_logo.png";
 import mouse from "./icons/mouse.png";
+import banco from "./icons/banco.png";
 import personas from "./icons/personas.png";
 import empresas from "./icons/empresas.png";
 import lonuevo from "./icons/lonuevo.png";
-import atencion from "./icons/atencion.png";
-import ubicanos from "./icons/ubicanos.png";
-import buscar from "./icons/buscar.png";
+import atencionIcon from "./icons/atencion.png";
+import servicios from "./icons/services.png";
 
 export function Navbar() {
   return (
@@ -52,25 +52,29 @@ export function Navbar() {
                   Empresas
                 </button>
               </Link>
-              <button type="button" className="border-end btn text-light text-center pe-2">
+              <Link className="border-end btn text-light text-center pe-2" role="button" to="/LoNuevo">
                 <img src={lonuevo} width={16} height={16} alt="" />
                 Lo Nuevo
-              </button>
-              <button type="button" className="btn text-light p-2 text-center m-1">
-                <img src={atencion} width={16} height={16} alt="" />
+              </Link>
+              <Link to="/Atencion" role="button" className="btn text-light p-2 text-wrap text-center w-25">
+                <img src={atencionIcon} width={16} height={16} alt="" />
                 Atención al Cliente
-              </button>
+              </Link>
             </div>
 
             <div className="ms-2 nav-group btn-md rounded bg-primary">
-              <button type="button" className="border-end btn text-light text-center pe-2 me-2">
-                <img src={ubicanos} width={16} height={16} alt="" />
-                Ubicanos
-              </button>
-              <button type="button" className="btn text-light p-2 text-center m-1 me-2">
-                <img src={buscar} width={16} height={16} alt="" />
-                Buscar
-              </button>
+              <Link className="border-end btn text-light text-center pe-2 me-2" role="button" to="/Servicios">
+                <img src={servicios} width={16} height={16} alt="" />
+                Servicios
+              </Link>
+              <Link
+                className="btn text-light text-wrap text-center w-50"
+                role="button"
+                to="/SomosBanco"
+              >
+                <img className="me-2" src={banco} width={16} height={16} alt="" />
+                Somos Banco Universitario
+              </Link>
             </div>
           </div>
 
@@ -79,10 +83,10 @@ export function Navbar() {
             <li className="nav-item"><Link to="/Registro" className="nav-link">Banca por Internet</Link></li>
             <li className="nav-item"><Link to="/login" className="nav-link">Personas</Link></li>
             <li className="nav-item"><Link to="/login" className="nav-link">Empresas</Link></li>
-            <li className="nav-item"><Link to="#" className="nav-link">Lo Nuevo</Link></li>
-            <li className="nav-item"><Link to="#" className="nav-link">Atención al Cliente</Link></li>
-            <li className="nav-item"><Link to="#" className="nav-link">Ubicanos</Link></li>
-            <li className="nav-item"><Link to="#" className="nav-link">Buscar</Link></li>
+            <li className="nav-item"><Link to="/LoNuevo" className="nav-link">Lo Nuevo</Link></li>
+            <li className="nav-item"><Link to="/Atencion" className="nav-link">Atención al Cliente</Link></li>
+            <li className="nav-item"><Link to="/Servicios" className="nav-link">Servicios</Link></li>
+            <li className="nav-item"><Link to="/SomosBanco" className="nav-link">Somos Banco Universitario</Link></li>
           </ul>
         </div>
       </div>

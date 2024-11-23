@@ -12,7 +12,11 @@ import Directorio from "./pages/Banco/Directorio";
 import DirectorioCrud from "./pages/Banco/DirectorioCrud";
 import Transferencia from "./pages/Banco/Transferencia";
 import CambioContra from "./pages/Banco/CambioContra";
+import LoNuevo from "./pages/LoNuevo";
+import Servicios from "./pages/Servicios";
+import Atencion from "./pages/Atencion";
 import "./style.css";
+
 
 const root = createRoot(document.getElementById("root"));
 
@@ -26,6 +30,9 @@ root.render(
       <Route path="*" element={<NoPage />} />
       <Route path="/MasInfo" element={<MasInfor />} />
       <Route path="/SomosBanco" element={<SomosBanco />} />
+      <Route path="/LoNuevo" element={<LoNuevo/>} />
+      <Route path="/Servicios" element={<Servicios/>} />
+      <Route path="/Atencion" element={<Atencion/>} />
       <Route path="/Banco/Inicio" element={<Banco />} />
       <Route path="/Banco/Movimientos" element={<Movimientos />} />
       <Route path="/Banco/Directorio" element={<Directorio />} />

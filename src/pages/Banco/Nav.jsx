@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import logo from "../../icons/banco_logo.png";
-import printer from "../../icons/printer.png";
-import callSupport from "../../icons/callSupport.png";
 import iconExit from "../../icons/exit.png";
 import AngleDown from "../../icons/iconAngleDown.png";
 
@@ -17,12 +15,6 @@ export function Nav() {
           </div>
 
           <div className="nav-group d-flex me-2">
-            <button type="button" className="border-end btn pe-2 me-2">
-              <img src={printer} />
-            </button>
-            <button type="button" className="border-end btn pe-2 me-2">
-              <img src={callSupport} />
-            </button>
 
             <Link to="/login">
               <button type="button" className="btn pe-2 me-2">

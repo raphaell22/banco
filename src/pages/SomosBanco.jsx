@@ -1,4 +1,3 @@
-import React from "react";
 import { Navbar } from "../Navbar";
 import { Footer } from "../Footer";
 import imgMision from "../assets/img/mision.png";
@@ -26,7 +25,7 @@ const SomosBanco = () => {
       </h2>
       <div className="container mb-3">
         <div className="row mb-2">
-          <div style={backgroundGradient.left} className="col p-2 ps-4">
+          <div style={backgroundGradient.left} className="col-lg col-sm p-2 ps-4">
             <h3 className="text-primary fw-bold">Misión</h3>
             <p className="text-primary mt-4">
               Brindar a los estudiantes universitarios una experiencia bancaria
@@ -35,15 +34,15 @@ const SomosBanco = () => {
               académicas y personales.
             </p>
           </div>
-          <div className="col p-0">
+          <div className="col-lg col-sm p-0">
             <img src={imgMision} className="img-fluid w-100 opacity-75" />
           </div>
         </div>
         <div className="row mb-2">
-          <div className="col p-0">
+          <div className="col-lg col-sm p-0">
             <img src={imgVision} className="img-fluid opacity-75" />
           </div>
-          <div style={backgroundGradient.right} className="col p-2 ps-4">
+          <div style={backgroundGradient.right} className="col-lg col-sm p-2 ps-4">
             <h3 className="text-primary fw-bold">Visión</h3>
             <p className="text-primary mt-4">
               Ser el banco universitario líder en la región, reconocido por su
@@ -55,10 +54,10 @@ const SomosBanco = () => {
       </div>
       <div className="container mt-3">
         <div className="row">
-          <div className="col">
+          <div className="col-lg col-sm">
             <img src={imgObjetivos} className="img-fluid p-2 opacity-75" />
           </div>
-          <div className="col">
+          <div className="col-lg col-sm">
             <h2 className="text-primary fw-bold mb-3">Objetivos</h2>
             <ul>
               <li className="mb-4">

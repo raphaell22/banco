@@ -20,14 +20,7 @@ export function Info() {
           Limites Diarios
         </button>
 
-        <Link
-          className="col-lg col-md-12 col-sm-12 d-flex me-2 border-0 btn-md bg-primary text-light p-2 text-decoration-none mb-2"
-          role="button"
-          to="/SomosBanco"
-        >
-          <img className="me-1" src={banco} width={32} height={32} alt="Somos Banco Universitario" />
-          Somos Banco Universitario
-        </Link>
+     
 
         <button
           className="col-lg col-md-12 col-sm-12 d-flex me-2 border-0 btn-md bg-primary text-light p-2 mb-2"
