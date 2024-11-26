@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import { Nav } from "./Nav";
 import { Link } from "react-router-dom";
 import { backgroundBank } from "./Banco";
@@ -5,19 +6,38 @@ import FooterBanco from "./FooterBanco";
 import iconSearch from "../../icons/buscar_fill.png";
 
 const Movimientos = () => {
-  const rows = []; // Inicializa un array para almacenar las filas de relleno
+  const [rows, setRows] = useState([]);
+  
+  useEffect(() => {
+    const userData = atob(sessionStorage.getItem('dt'));
+    const mis_datos = JSON.parse(userData);
+    const token = mis_datos.jwt;
+    const myHeaders = new Headers();
+    myHeaders.append("Accept-Language", "es");
+    myHeaders.append("Authorization", `Bearer ${token}`);
+    const requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow"
+    };
 
-  for (let index = 0; index < 8; index++) {
-    rows.push(
-      <tr key={index}>
-        <td></td> {/* Celdas vacías de relleno*/}
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    );
-  }
+    fetch("http://localhost:3000/v1/client/movement?page=1&page_size=10&multiplier=1", requestOptions)
+      .then((response) => response.text())
+      .then((result) => {
+        let data = JSON.parse(result)['data'];
+        let newRows = data.map((item, index) => (
+          <tr key={index}>
+            <td>{new Date(item.created_at).toLocaleDateString()}</td>
+            <td>{item.description}</td>
+            <td>#{item.id}</td>
+            <td>{item.amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</td>
+            <td>{item.balance.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</td>
+          </tr>
+        ));
+        setRows(newRows);
+      })
+      .catch((error) => console.error(error));
+  }, []); // Dependencia vacía para ejecutar solo una vez al montar el componente
 
   return (
     <div style={backgroundBank}>

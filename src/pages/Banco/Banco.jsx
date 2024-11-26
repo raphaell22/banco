@@ -1,14 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Nav } from "./Nav";
 import FooterBanco from "./FooterBanco";
+import { useNavigate } from "react-router-dom";
 
 export const backgroundBank = {
   background: "linear-gradient(to bottom, #ffffff 20%, #085f63)",
   height: "100vh",
-  position: "relative", // Agregar para que el pie se posicione correctamente
+  position: "relative",
 };
 
 const Banco = () => {
+  const [cuenta, setCuenta] = useState('0000-0000-00-0000000000');
+  const [saldo, setSaldo] = useState('0,00');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    let token = sessionStorage.getItem('tk');
+    if (!token) {
+      navigate('/login');
+    } else {
+      const userData = atob(sessionStorage.getItem('dt'));
+      const mis_datos = JSON.parse(userData);
+      token = mis_datos.jwt;
+      const myHeaders = new Headers();
+      myHeaders.append("Accept-Language", "es");
+      myHeaders.append("Authorization", `Bearer ${token}`);
+      const requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow"
+      };
+
+      setCuenta(mis_datos.account_number);
+
+      fetch("http://localhost:3000/v1/client/user/balance", requestOptions)
+        .then((response) => response.text())
+        .then((result) => {
+          let data = JSON.parse(result)['data'];
+          setSaldo(data.balance.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+        })
+        .catch((error) => console.error(error));
+    }
+  }, [navigate]);
+
   return (
     <div style={backgroundBank}>
       <Nav />
@@ -38,8 +72,8 @@ const Banco = () => {
                 <tbody>
                   <tr>
                     <td>Cuenta Corrienta C/Intereses</td>
-                    <td>0000-0000-00-0000000000</td>
-                    <td>0.00 Bs.</td>
+                    <td>{cuenta}</td>
+                    <td>Bs. {saldo}</td>
                   </tr>
                 </tbody>
               </table>

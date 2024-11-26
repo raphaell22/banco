@@ -2,8 +2,25 @@ import { Link } from "react-router-dom";
 import logo from "../../icons/banco_logo.png";
 import iconExit from "../../icons/exit.png";
 import AngleDown from "../../icons/iconAngleDown.png";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Nav() {
+  const navigate = useNavigate();
+
+  const [nombre, setNombre] = useState(''); 
+
+  useEffect(() => {
+    const token = sessionStorage.getItem('tk');
+    if(!token){
+      navigate('/login');
+    }else{
+      let userData = atob(sessionStorage.getItem('dt'));
+      let mis_datos = JSON.parse(userData);
+      setNombre(mis_datos.first_name + ' '+ mis_datos.last_name);
+    }
+  })
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg mb-4 bg-white p-2 border-bottom">
@@ -18,7 +35,7 @@ export function Nav() {
 
             <Link to="/login">
               <button type="button" className="btn pe-2 me-2">
-                <img src={iconExit} />
+                <img title="Cerrar Sesión" src={iconExit} />
               </button>
             </Link>
           </div>
@@ -68,7 +85,7 @@ export function Nav() {
 
       <nav className="navbar navbar-expand-lg p-0 m-0 mt-4 w-100">
         <div className="container-fluid bg-primary text-light justify-content-end pe-5">
-          <h5>Buen día, Juan Javier Sanchez Bracho</h5>
+          <h5>{nombre}</h5>
         </div>
       </nav>
     </div>

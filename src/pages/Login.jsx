@@ -13,10 +13,11 @@ export const Login = () => {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
+  sessionStorage.clear();
   const handleSubmit = async (e) => {
   e.preventDefault();
   setMessage(''); // Limpiar cualquier mensaje previo
-
+  
     try {
         const response = await fetch('http://localhost:3000/v1/public/client/user/login', {
             method: 'POST',
@@ -26,13 +27,16 @@ export const Login = () => {
             body: JSON.stringify({ email, password }),
         });
 
-        const data = await response.json();
+        const json = await response.json();
 
         if (response.ok) {
+            sessionStorage.setItem('dt',btoa(JSON.stringify(json['data'])));
+            sessionStorage.setItem('tk',btoa(json.data.jwt));
             setMessage('¡Autenticado exitosamente!');
             navigate('/Banco/Inicio');
         } else {
-            setMessage('Error de autenticación: ' + data.message);
+            sessionStorage.clear();
+            setMessage('Error de autenticación: ' + json.message);
         }
     } catch (error) {
         setMessage('Error al conectar con la API: ' + error.message);
