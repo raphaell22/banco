@@ -23,7 +23,7 @@ export function Nav() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg mb-4 bg-white p-2 border-bottom">
+      <nav className="navbar navbar-expand-lg mb-4 bg-white p-0 border-bottom">
         <div className="container-fluid">
           <div className="navbar-brand m-2">
             <Link to="/Banco/Inicio">
@@ -83,7 +83,7 @@ export function Nav() {
         </div>
       </nav>
 
-      <nav className="navbar navbar-expand-lg p-0 m-0 mt-4 w-100">
+      <nav className="navbar navbar-expand-lg p-0 m-0 mt-2 w-100">
         <div className="container-fluid bg-primary text-light justify-content-end pe-5">
           <h5>{nombre}</h5>
         </div>
