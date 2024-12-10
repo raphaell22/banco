@@ -118,22 +118,7 @@ const Movimientos = () => {
                   {renderPageNumbers()}
                 </ul>
               </nav>
-              <div className="input-group bg-gradient-secondary p-1 w-100 m-auto">
-                <img
-                  className="m-0"
-                  src={iconSearch}
-                  width={32}
-                  height={32}
-                  alt="Buscar"
-                />
-                <input
-                  className="form-control border-0 border-bottom border-primary text-dark bg-transparent"
-                  placeholder="Buscar..."
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                ></input>
-              </div>
+              
             </div>
           </div>
         </div>

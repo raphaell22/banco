@@ -113,7 +113,7 @@ const Registro = () => {
                 <div className="input-group bg-white rounded-8">
                   <input required type="password" id="password" className="form-control text-primary border-0 rounded-8" />
                   <span className="input-group-addon bg-none border-0">
-                    <img src={iconEyeForm} />
+                  
                   </span>
                 </div>
               </div>
@@ -125,7 +125,7 @@ const Registro = () => {
                 <div className="input-group bg-white rounded-8">
                   <input required type="password" className="form-control text-primary border-0 rounded-8" />
                   <span className="input-group-addon bg-none border-0">
-                    <img src={iconEyeForm} />
+                    
                   </span>
                 </div>
               </div>

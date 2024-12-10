@@ -50,7 +50,7 @@ const DirectorioCrud = () => {
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
-        alert(result.message);
+        alertify.success(result.message);
         if (result.message === 'Contacto registrado con éxito' || result.message === 'Contacto actualizado con éxito') {
           navigate("/Banco/Directorio");
         }

@@ -32,14 +32,15 @@ export const Login = () => {
         if (response.ok) {
             sessionStorage.setItem('dt',btoa(JSON.stringify(json['data'])));
             sessionStorage.setItem('tk',btoa(json.data.jwt));
-            setMessage('¡Autenticado exitosamente!');
+            alertify.success('Bienvenido!');
             navigate('/Banco/Inicio');
         } else {
             sessionStorage.clear();
-            setMessage('Error de autenticación: ' + json.message);
+            alertify.alert('Error de autenticación: ' + json.message).set({title:"Error al Iniciar Sesión"});
+            //setMessage('Error de autenticación: ' + json.message);
         }
     } catch (error) {
-        setMessage('Error al conectar con la API: ' + error.message);
+        alertify.alert('Error al conectar con la API: ' + error.message);
     }
 };
 
@@ -111,7 +112,7 @@ export const Login = () => {
                       className="form-control text-primary border-0 rounded-8"
                     />
                     <span className="input-group-addon bg-none border-0">
-                      <img src={iconEyeForm} />
+                      
                     </span>
                   </div>
                 </div>
